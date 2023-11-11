@@ -10,9 +10,7 @@
 
 int print_perc(va_list args)
 {
-	(void)args;
+	char p = va_arg(args, int);
 
-	_putchar('%');
-
-	return (1);
+	return (write(1, &p, 1));
 }
