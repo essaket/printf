@@ -11,6 +11,7 @@
 int print_string(va_list args)
 {
 	int counter = 0;
+	int i;
 	char *str = va_arg(args, char *);
 
 	if (!str)
