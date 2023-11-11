@@ -20,7 +20,7 @@ int print_string(va_list args)
 		return (-1);
 
 	for (i = 0; str[i] != '\0'; i++)
-		count_fun += _putchar(str[i]);
+		counter += _putchar(str[i]);
 
 	return (counter);
 }
