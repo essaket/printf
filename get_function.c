@@ -20,7 +20,7 @@ int get_function(char specifier, va_list args)
 		{'%', print_perc},
 		{'d', print_digit},
 		{'i', print_digit},
-		{0, NULL}
+		{NULL, NULL}
 	};
 
 	while (spec[i].s)
