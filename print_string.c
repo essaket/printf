@@ -20,7 +20,7 @@ int print_string(va_list args)
 		return (-1);
 
 	while (*str)
-		counter += _putchar(*str++);
+		counter += _putchar(str++);
 
-	return (6);
+	return (counter);
 }
