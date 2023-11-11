@@ -12,5 +12,7 @@ int print_perc(va_list args)
 {
 	char p = va_arg(args, int);
 
-	return (write(1, &p, 1));
+	_putchar(p);
+
+	return (1);
 }
