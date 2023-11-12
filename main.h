@@ -7,8 +7,8 @@
 #include <unistd.h>
 
 /**
- * struct parametres - struct for printer functions
- * @type_arg: identifier
+ * struct parametres - struct for finding functions
+ * @specifier: character of specifier
  * @f: pointer to a printer functions
  *
  * Description: struct that stores pointers to a
@@ -16,16 +16,17 @@
  */
 typedef struct parametres
 {
-	char s;
-	int (*f)(va_list);
-} parametres_p;
+	char *specifier;
+	int (*f)(va_list args);
+} specifiers_p;
 
 int _printf(const char *format, ...);
-int get_function(char specifier, va_list args);
+int check_specifier(char c);
+int invalid_specifier(char prev_chara, char chara, int count);
+int get_function(char format, va_list args);
 int _putchar(char c);
 int print_char(va_list args);
 int print_digit(va_list args);
-int print_perc(va_list args);
 int print_string(va_list args);
 
 #endif

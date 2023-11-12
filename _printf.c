@@ -9,39 +9,42 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, count = 0, count_fun;
-	va_list args;
+	int count = 0, i = 0;
+	va_list arguments;
 
-	va_start(args, format);
-	if (!format || (format[0] == '%' && !format[1]))
+	if (format == NULL)
 		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
-	while (format[i])
+
+	va_start(arguments, format);
+
+	while (format && format[i])
 	{
-		count_fun = 0;
 		if (format[i] == '%')
 		{
-			if (!format[i + 1] || (format[i + 1] == ' ' && !format[i + 2]))
-			{
-				count = -1;
-				break;
-			}
-			count_fun += get_function(format[i + 1], args);
-			if (count_fun == 0)
-				count += _putchar(format[i + 1]);
-			if (count_fun == -1)
-				count = -1;
+			if (format[i + 1] == '\0')
+				return (-1);
+
 			i++;
+
+			while (format[i] == ' ')
+				i++;
+
+			if (format[i] == '%')
+				count += _putchar(format[i]);
+
+			if (check_specifier(format[i]) == 0)
+				count = invalid_specifier(format[i - 1], format[i], count);
+			else
+				count += get_function(format[i], arguments);
 		}
 		else
 		{
-			(count == -1) ? (_putchar(format[i])) : (count += _putchar(format[i]));
+			count += _putchar(format[i]);
 		}
+
 		i++;
-		if (count != -1)
-			count += count_fun;
 	}
-	va_end(args);
+
+	va_end(arguments);
 	return (count);
 }
