@@ -16,7 +16,7 @@ int print_perc(va_list args)
 	if (*str == '%')
 		c += _putchar ('%');
 	if (*str)
-		c += _putchar(*srt++);
+		c += _putchar(*str++);
 
 	return (c);
 }
