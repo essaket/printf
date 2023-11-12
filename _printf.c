@@ -17,26 +17,34 @@ int _printf(const char *format, ...)
 
 	if (!format || (*format == '%' && !(*(format + 1))))
 		return (-1);
-	if (*format == '%' && *(format + 1) == ' ' && *(format + 2) == '\0')
-		return (-1);
-	while (*(format + i) != '\0')
+	if (!(*(format + i)))
+		return (0);
+	for (i = 0; format && *(format + i); i++)
 	{
-		fn_counter = 0;
 		if (*(format + i) == '%')
 		{
-		fn_counter += get_function(*(format + i + 1), args);
-		if (fn_counter == 0)
-		counter += _putchar(*(format + i + 1));
-		if (fn_counter == -1)
-		counter = -1;
-		i++;
+			if (*(format + i + 1) == '\0')
+			{
+				return (-1);
+			}
+			else
+			{
+				fn_counter += get_function(*(format + i + 1), args);
+				if (fn_counter == 0)
+				{
+					if (*(format + i) == ' ' && !(*(format + i + 2)))
+						return (-1);
+				}
+				else
+				{
+					counter += fncount;
+					i++;
+					continue;
+				}
+			}
 		}
 		else
-		{
 		counter += _putchar(*(format + i));
-		}
-	counter += fn_counter;
-	i++;
 	}
 	va_end(args);
 	return (counter);
