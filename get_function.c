@@ -9,7 +9,7 @@
  * Return: char count.
  */
 
-int get_function(char *specifier, va_list args)
+int get_function(char specifier, va_list args)
 {
 	int i = 0;
 	int counter = 0;
@@ -24,7 +24,7 @@ int get_function(char *specifier, va_list args)
 
 	while (spec[i].s)
 	{
-		if (*specifier == spec[i].s)
+		if (specifier == spec[i].s)
 			counter += spec[i].f(args);
 		i++;
 	}
@@ -32,7 +32,7 @@ int get_function(char *specifier, va_list args)
 	if (counter == 0)
 	{
 		counter += _putchar('%');
-		counter += _putchar(*specifier);
+		counter += _putchar(specifier);
 	}
 
 	return (counter);
