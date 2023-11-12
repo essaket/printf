@@ -32,13 +32,9 @@ int _printf(const char *format, ...)
 				count += _putchar(format[i]);
 
 			if (check_specifier(format[i]) == 0)
-			{					
 				count = invalid_specifier(format[i - 1], format[i], count);
-			}
 			else
-			{
 				count += get_function(format[i], arguments);
-			}
 		}
 		else
 		{
