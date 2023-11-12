@@ -14,5 +14,5 @@ int print_perc(va_list args)
 
 	_putchar(37);
 
-	return (1);
+	return (2);
 }
