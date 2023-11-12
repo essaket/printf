@@ -2,18 +2,14 @@
 #include <unistd.h>
 
 /**
- * print_char - print char
- *
- * @args: argument.
- *
- * Return: count of chars.
- */
-
+  * _print_a_char - Prints a char
+  * @args: A list of variadic arguments
+  *
+  * Return: The length of the character
+  */
 int print_char(va_list args)
 {
-	char c = va_arg(args, int);
-
-	_putchar(c);
+	_putchar(va_arg(args, int));
 
 	return (1);
 }
