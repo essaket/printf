@@ -26,16 +26,13 @@ int _printf(const char *format, ...)
 		{
 		fn_counter += get_function(*(format + i + 1), args);
 		if (fn_counter == 0)
-			counter += _putchar(*(format + i + 1));
-			if (fn_counter == -1)
-				counter = -1;
-			i++;
+		counter += _putchar(*(format + i + 1));
+		if (fn_counter == -1)
+		counter = -1;
+		i++;
 		}
 		else
 		{
-		if (counter == -1)
-		_putchar(*(format + i));
-		else
 		counter += _putchar(*(format + i));
 		}
 	counter += fn_counter;
