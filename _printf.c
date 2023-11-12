@@ -1,11 +1,10 @@
 #include "main.h"
-#include <unistd.h>
+
 /**
- * _printf - Emulate the original.
+ * _printf - formatted output conversion and print data.
+ * @format: input string.
  *
- * @format: Format by specifier.
- *
- * Return: count of chars.
+ * Return: number of chars printed.
  */
 int _printf(const char *format, ...)
 {
@@ -33,9 +32,13 @@ int _printf(const char *format, ...)
 				count += _putchar(format[i]);
 
 			if (check_specifier(format[i]) == 0)
+			{					
 				count = invalid_specifier(format[i - 1], format[i], count);
+			}
 			else
+			{
 				count += get_function(format[i], arguments);
+			}
 		}
 		else
 		{
