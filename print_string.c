@@ -11,7 +11,6 @@
 int print_string(va_list args)
 {
 	int counter = 0;
-	int i;
 	char *str = va_arg(args, char *);
 
 	if (!str)
@@ -20,8 +19,8 @@ int print_string(va_list args)
 	if (str[0] == '\0')
 		return (-1);
 
-	for (i = 0; str[i] != '\0'; i++)
-		counter += _putchar(str[i]);
+	while (*str)
+		counter += _putchar(*str++);
 
 	return (counter);
 }
