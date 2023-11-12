@@ -19,8 +19,8 @@ int print_string(va_list args)
 	if (str[0] == '\0')
 		return (-1);
 
-	while (*str)
-		counter += _putchar(*str++);
+	for (i = 0; str[i] != '\0'; i++)
+		counter += _putchar(str[i]);
 
 	return (counter);
 }
