@@ -1,26 +1,31 @@
 #include "main.h"
-
 /**
- * print_string - print string.
- *
- * @args: argument.
- *
- * Return: character count.
- */
-
+  * print_string - Prints a string
+  * @args: A list of variadic arguments
+  *
+  * Return: The length of the string
+  */
 int print_string(va_list args)
 {
-	int counter = 0, i;
 	char *str = va_arg(args, char *);
+	int i = 0;
 
-	if (!str)
-		str = "(null)";
+	if (str != NULL)
+	{
+		while (str[i])
+		{
+			_putchar(str[i]);
+			i++;
+		}
 
-	if (str[0] == '\0')
-		return (-1);
+		return (i);
+	}
 
-	for (i = 0; str[i] != '\0'; i++)
-		counter += _putchar(str[i]);
-
-	return (counter);
+	_putchar('(');
+	_putchar('n');
+	_putchar('u');
+	_putchar('l');
+	_putchar('l');
+	_putchar(')');
+	return (6);
 }
