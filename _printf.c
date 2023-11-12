@@ -1,49 +1,47 @@
 #include "main.h"
-
-
-
+#include <unistd.h>
 /**
- * _printf - formatted output conversion and print data.
- * @format: input string.
+ * _printf - Emulate the original.
  *
- * Return: number of chars printed.
+ * @format: Format by specifier.
+ *
+ * Return: count of chars.
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, fncount, count = 0;
-	va_list arguments;
+	int i = 0, count = 0, count_fun;
+	va_list args;
 
-	va_start(arguments, format);
-	if (!format || (format[i] == '%' && !format[i + 1]))
+	va_start(args, format);
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
-	if (!format[i])
-		return (0);
-	for (i = 0; format && format[i]; i++)
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+	while (format[i])
 	{
+		count_fun = 0;
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '\0')
+			if (!format[i + 1] || (format[i + 1] == ' ' && !format[i + 2]))
 			{
-				return (-1);
+				count = -1;
+				break;
 			}
-			else
-			{	fncount = get_function(format[i + 1], arguments);
-				if (fncount == 0)
-				{
-					if (format[i + 1] == ' ' && !format[i + 2])
-						return (-1);
-				}
-				else
-				{
-					count += fncount;
-					i++;
-					continue;
-				}
-			}
+			count_fun += get_function(format[i + 1], args);
+			if (count_fun == 0)
+				count += _putchar(format[i + 1]);
+			if (count_fun == -1)
+				count = -1;
+			i++;
 		}
 		else
-		count += _putchar(format[i]);
+		{
+			(count == -1) ? (_putchar(format[i])) : (count += _putchar(format[i]));
 		}
-	va_end(arguments);
+		i++;
+		if (count != -1)
+			count += count_fun;
+	}
+	va_end(args);
 	return (count);
 }
