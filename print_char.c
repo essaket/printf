@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 /**
-  * _print_a_char - Prints a char
+  * print_char - Prints a char
   * @args: A list of variadic arguments
   *
   * Return: The length of the character
