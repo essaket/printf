@@ -18,15 +18,14 @@ typedef struct parametres
 {
 	char *specifier;
 	int (*f)(va_list args);
-} specifiers_p;
+} parametres_p;
 
 int _printf(const char *format, ...);
-int check_specifier(char c);
-int invalid_specifier(char prev_chara, char chara, int count);
 int get_function(char format, va_list args);
 int _putchar(char c);
 int print_char(va_list args);
 int print_digit(va_list args);
 int print_string(va_list args);
+int print_perc(va_list args);
 
 #endif
