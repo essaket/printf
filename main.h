@@ -21,7 +21,7 @@ typedef struct parametres
 } parametres_p;
 
 int _printf(const char *format, ...);
-int get_function(char s, va_list args);
+int get_function(char specifier, va_list args);
 int _putchar(char c);
 int print_char(va_list args);
 int print_digit(va_list args);
