@@ -13,7 +13,7 @@ int print_perc(va_list args)
 {
 	(void)args;
 
-	_putchar('%');
+	_putchar(37);
 
 	return (1);
 }

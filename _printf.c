@@ -1,50 +1,50 @@
 #include "main.h"
 
 /**
- * _printf - Print a string acording to a format.
+ * _printf - formatted output conversion and print data.
+ * @format: input string.
  *
- * @format: Format by specifier.
- *
- * Return: count of characters.
+ * Return: number of chars printed.
  */
+
 int _printf(const char *format, ...)
 {
-	int i = 0, counter = 0, fn_count;
-	va_list args;
+	int count = 0, i = 0;
+	va_list arguments;
 
-	va_start(args, format);
-	if (!format || (format[0] == '%' && !format[1]))
+	if (format == NULL)
 		return (-1);
-	if (*format == '%' && *(format + 1) == ' ' && !(*(format + 2)))
-		return (-1);
-	while (format[i])
+
+	va_start(arguments, format);
+
+	while (format && format[i])
 	{
-		fn_count = 0;
 		if (format[i] == '%')
 		{
-			if (!format[i + 1] || (format[i + 1] == ' ' && !format[i + 2]))
-			{
-				counter = -1;
-				break;
-			}
-			fn_count += get_function(format[i + 1], args);
-			if (fn_count == 0)
-				counter += _putchar(format[i + 1]);
-			if (fn_count == -1)
-				counter = -1;
+			if (format[i + 1] == '\0')
+				return (-1);
+
 			i++;
+
+			while (format[i] == ' ')
+				i++;
+
+			if (format[i] == '%')
+				count += _putchar(format[i]);
+
+			if (check_specifier(format[i]) == 0)
+				count = invalid_specifier(format[i - 1], format[i], count);
+			else
+				count += get_function(format[i], arguments);
 		}
 		else
 		{
-			if (counter == -1)
-			_putchar(format[i]);
-			else
-			counter += _putchar(format[i]);
+			count += _putchar(format[i]);
 		}
+
 		i++;
-		if (counter != -1)
-			counter += fn_count;
 	}
-	va_end(args);
-	return (counter);
+
+	va_end(arguments);
+	return (count);
 }
