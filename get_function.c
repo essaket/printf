@@ -15,7 +15,7 @@ int get_function(char specifier, va_list args)
 	int counter = 0;
 
 	parametres_p spec[] = {
-		{'c', print_char},
+		{'c', _putchar},
 		{'s', print_string},
 		{'%', print_perc},
 		{'d', print_digit},
