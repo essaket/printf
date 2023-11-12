@@ -11,12 +11,12 @@
 int print_perc(va_list args)
 {
 	char *str = va_list(args, char *);
-	int c = 0;
+	int c = 0, i = 0;
 
-	if (*str == '%')
+	if (str[0] == '%')
 		c += _putchar ('%');
-	if (*str)
-		c += _putchar(*str++);
+	if (str[1] != NULL)
+		c += _putchar(str[1]);
 
 	return (c);
 }
