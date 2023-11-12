@@ -19,6 +19,7 @@ int get_function(char c, va_list args)
 		{'s', print_string},
 		{'d', print_digit},
 		{'i', print_digit},
+		{'%', print_perc},
 		{0, NULL}
 	};
 
