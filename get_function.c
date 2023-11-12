@@ -32,7 +32,7 @@ int get_function(char *specifier, va_list args)
 	if (counter == 0)
 	{
 		counter += _putchar('%');
-		counter += _putchar(specifier);
+		counter += _putchar(*specifier);
 	}
 
 	return (counter);
