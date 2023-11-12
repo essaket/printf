@@ -16,7 +16,7 @@
  */
 typedef struct parametres
 {
-	char *specifier;
+	char specifier;
 	int (*f)(va_list args);
 } parametres_p;
 
