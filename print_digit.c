@@ -1,49 +1,41 @@
 #include "main.h"
 
-void recursion_int(int n);
-
 /**
-  * print_digit - Prints a integer
-  * @args: A list of variadic arguments
-  *
-  * Return: The length of the string
-  */
+ * print_digit - print integers.
+ *
+ * @args: list of argument.
+ *
+ * Return: count of characters.
+ */
+
 int print_digit(va_list args)
 {
-	int count = 1, m = 0;
-	unsigned int n = 0;
+	int dec = 1;
+	int counter = 0;
+	long int digit = va_arg(args, int);
+	long int digits;
 
-	n = va_arg(args, int);
-	m = n;
-	if (m < 0)
+	if (digit < 0)
 	{
-		_putchar('-');
-		m = m * -1;
-		n = m;
-		count += 1;
-	}
-	while (n > 9)
-	{
-		n = n / 10;
-		count++;
+		counter += _putchar('-');
+		digit *= -1;
 	}
 
-	recursion_int(m);
-	return (count);
-}
+	if (digit < 10)
+		return (counter += _putchar(digit + '0'));
 
-/**
-  * recursion_int - Prints a integer
-  * @n: integer to print
-  *
-  * Return: Nothing
-  */
-void recursion_int(int n)
-{
-	unsigned int l;
+	digits = digit;
 
-	l = n;
-	if (l / 10)
-		recursion_int(l / 10);
-	_putchar(l % 10 + '0');
+	while (digits > 9)
+	{
+		dec *= 10;
+		digits /= 10;
+	}
+	while (dec >= 1)
+	{
+		counter += _putchar(((digit / dec) % 10) + '0');
+		dec /= 10;
+	}
+
+	return (counter);
 }
