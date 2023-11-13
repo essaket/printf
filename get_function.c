@@ -15,14 +15,11 @@ int get_function(char chara, va_list args)
 		{"b", print_binary},
 		{"d", print_digit},
 		{"i", print_digit},
-<<<<<<< HEAD
 		{"p", print_address},
-=======
 		{"u", print_unsigned},
 		{"o", print_octal},
 		{"x", print_hex},
 		{"X", print_HEX},
->>>>>>> 382cdf65835f0b44bac965adcbcc9ddde0e97e4f
 		{NULL, NULL}
 	};
 
