@@ -15,6 +15,7 @@ int get_function(char chara, va_list args)
 		{"b", print_binary},
 		{"d", print_digit},
 		{"i", print_digit},
+		{"p", print_address},
 		{NULL, NULL}
 	};
 
