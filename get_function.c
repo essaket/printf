@@ -15,6 +15,10 @@ int get_function(char chara, va_list args)
 		{"b", print_binary},
 		{"d", print_digit},
 		{"i", print_digit},
+		{"u", print_unsigned},
+		{"o", print_octal},
+		{"x", print_hex},
+		{"X", print_HEX},
 		{NULL, NULL}
 	};
 
