@@ -33,6 +33,8 @@ void recursion_binary(int n);
 int print_unsigned(va_list args);
 int print_octal(va_list val);
 int print_hex(va_list args);
+int print_hex_plus(unsigned long int n);
 int print_HEX(va_list args);
+int print_HEX_plus(unsigned int n);
 
 #endif
