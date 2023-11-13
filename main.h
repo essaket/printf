@@ -30,5 +30,9 @@ int print_digit(va_list args);
 int print_string(va_list args);
 int print_binary(va_list args);
 void recursion_binary(int n);
+int print_unsigned(va_list args);
+int print_octal(va_list val);
+int print_hex(va_list args);
+int print_HEX(va_list args);
 
 #endif
