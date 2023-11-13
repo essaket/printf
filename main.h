@@ -36,9 +36,13 @@ int print_hex(va_list args);
 int print_hex_plus(unsigned long int n);
 int print_HEX(va_list args);
 <<<<<<< HEAD
+<<<<<<< HEAD
 int print_address(va_list args);
 =======
 int print_HEX_plus(unsigned int n);
 >>>>>>> dc7b7021d08884b5868d0bab76b66d9667486f37
+=======
+int print_HEX_plus(unsigned int n);
+>>>>>>> 382cdf65835f0b44bac965adcbcc9ddde0e97e4f
 
 #endif
