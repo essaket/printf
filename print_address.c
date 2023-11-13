@@ -29,6 +29,6 @@ int print_address(va_list args)
 	a = (unsigned long int)pnt;
 	_putchar('0');
 	_putchar('x');
-	b = print_HEX(a);
+	b = print_HEX_plus(a);
 	return (b + 2);
 }
