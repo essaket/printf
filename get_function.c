@@ -12,6 +12,7 @@ int get_function(char chara, va_list args)
 	specifiers_p specifiers[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"b", print_binary},
 		{"d", print_digit},
 		{"i", print_digit},
 		{NULL, NULL}
