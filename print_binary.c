@@ -1,47 +1,32 @@
 #include "main.h"
-
 /**
-  * recursion_binary - Prints a binary
-  * @n: integer to print
-  *
-  */
+* print_binary - Prints an unsigned number
+* @args: Lista of arguments
 
-void recursion_binary(int n)
-{
-	unsigned int i;
-
-	i = n;
-	if (i / 2)
-		recursion_binary(i / 2);
-	_putchar(i % 2 + '0');
-}
-
-/**
-  * print_binary - Prints a binary
-  * @args: A list of variadic arguments
-  *
-  * Return: The number of binary digits
-  */
-
+* Return: Numbers of char printed.
+*/
 int print_binary(va_list args)
 {
-	unsigned int a = 0;
-	int b = 0, c = 0;
+unsigned int n, m, i, sum;
+unsigned int a[32];
+int count;
 
-	c = va_arg(args, int);
-	a = c;
-	if (c < 0)
-	{
-		_putchar('1');
-		c = c * -1;
-		a = c;
-		b += 1;
-	}
-	while (a > 0)
-	{
-		a = a / 2;
-		b++;
-	}
-	recursion_binary(c);
-	return (b);
+n = va_arg(args, unsigned int);
+m = 2147483648; /* (2 ^ 31) */
+a[0] = n / m;
+for (i = 1; i < 32; i++)
+{
+    m /= 2;
+    a[i] = (n / m) % 2;
+}
+for (i = 0, sum = 0, count = 0; i < 32; i++){
+    sum += a[i];
+    if (sum || i == 31)
+    {
+    char z = '0' + a[i];
+    _putchar(z);
+    count++;
+    }
+}
+return (count);
 }
