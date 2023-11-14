@@ -21,6 +21,7 @@ int get_function(char chara, va_list args)
 		{"X", print_HEX},
 		{"S", print_String},
 		{"p", print_address},
+		{"r", print_reverse},
 		{NULL, NULL}
 	};
 
