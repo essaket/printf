@@ -15,15 +15,15 @@ int print_address(va_list args)
 	int b;
 
 	pnt = va_arg(args, void*);
-        if (pnt == NULL)
-        {
-            _putchar('(');
-            _putchar('n');
-            _putchar('i');
-            _putchar('l');
-            _putchar(')');
-            return (5);
-        }
+	if (pnt == NULL)
+	{
+	_putchar('(');
+	_putchar('n');
+	_putchar('i');
+	_putchar('l');
+	_putchar(')');
+	return (5);
+	}
 
 	a = (unsigned long int)pnt;
 	_putchar('0');
