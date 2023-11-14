@@ -17,12 +17,12 @@ int printf_rot13(va_list args)
 
 	if (pnt == NULL)
 		pnt = "(null)";
-	for (i = 0; pnt[i]]; i++)
+	for (i = 0; pnt[i]; i++)
 	{
 		k = 0;
 		for (j = 0; array1[j] && !k; j++)
 		{
-			if (s[i] == array1[j])
+			if (pnt[i] == array1[j])
 			{
 				_putchar(array2[j]);
 				nmb++;
