@@ -30,7 +30,7 @@ int print_String(va_list args)
 				_putchar('0');
 				len++;
 			}
-			len = len + printf_hex_plus(cast);
+			len = len + print_hex_plus(cast);
 		}
 		else
 		{
