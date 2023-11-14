@@ -22,6 +22,7 @@ int get_function(char chara, va_list args)
 		{"S", print_String},
 		{"p", print_address},
 		{"r", print_reverse},
+		{"R", print_rot13},
 		{NULL, NULL}
 	};
 
