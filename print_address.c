@@ -5,7 +5,7 @@
  *
  * @args: list of argument
  *
- * Return: number of char
+ * Return: number of characters
 */
 
 int print_address(va_list args)
@@ -13,8 +13,7 @@ int print_address(va_list args)
 	void *pnt;
 	char *nul = "(nil)";
 	long int a;
-	int b;
-	int i;
+	int b, i;
 
 	pnt = va_arg(args, void*);
 	if (pnt == NULL)
@@ -29,6 +28,6 @@ int print_address(va_list args)
 	a = (unsigned long int)pnt;
 	_putchar('0');
 	_putchar('x');
-	b = print_HEX_plus(a);
+	b = print_hex_plus(a);
 	return (b + 2);
 }
