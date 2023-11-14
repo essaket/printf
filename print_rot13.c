@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * printf_rot13 - printf string to rot13
+ * print_rot13 - printf string to rot13
  *
  * @args: input arguments
  *
  * Return: an int
  */
 
-int printf_rot13(va_list args)
+int print_rot13(va_list args)
 {
 	int i, j, nmb = 0, k = 0;
 	char *pnt = va_arg(args, char*);
