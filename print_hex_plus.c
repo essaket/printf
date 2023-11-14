@@ -10,7 +10,7 @@ int print_hex_plus(unsigned long int n)
 	long int i, counter = 0, *array;
 	unsigned long int a;
 
-	a = n
+	a = n;
 	while (n / 16 != 0)
 	{
 		n /= 16;
