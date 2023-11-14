@@ -20,6 +20,7 @@ int get_function(char chara, va_list args)
 		{"o", print_octal},
 		{"x", print_hex},
 		{"X", print_HEX},
+		{"S", print_String},
 		{NULL, NULL}
 	};
 

@@ -8,7 +8,7 @@
   */
 int check_specifier(char c)
 {
-	char specifiers[] = {'c', 's', 'd', 'i', 'b', 'u', 'o', 'x', 'X', 'p', '%'};
+	char specifiers[] = {'c', 's', 'd', 'i', 'b', 'u', 'o', 'x', 'X', 'p', 'S', '%'};
 	int i = 0;
 
 	while (specifiers[i])

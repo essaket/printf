@@ -2,9 +2,9 @@
 
 /**
  * print_String - function that print a String
- * 
+ *
  * @args: input argument
- * 
+ *
  * Return: an int
 */
 
