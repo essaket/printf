@@ -11,10 +11,8 @@
 int print_address(va_list args)
 {
 	void *pnt;
-	char *nul = "(nil)";
 	long int a;
 	int b;
-	int i;
 
 	pnt = va_arg(args, void*);
         if (pnt == NULL)
@@ -24,7 +22,7 @@ int print_address(va_list args)
             _putchar('i');
             _putchar('l');
             _putchar(')');
-            return (6);
+            return (5);
         }
 
 	a = (unsigned long int)pnt;
