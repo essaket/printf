@@ -15,10 +15,10 @@ int print_String(va_list args)
 	int cast;
 
 	s = va_arg(args, char *);
-	if (s == NULL)
-		s = "(null)";
-	for (i = 0; s[i] != '\0'; i++)
+	if (s != NULL)
 	{
+		for (i = 0; s[i] != '\0'; i++)
+		{
 		if (s[i] < 32 || s[i] >= 127)
 		{
 			_putchar('\\');
@@ -30,7 +30,7 @@ int print_String(va_list args)
 				_putchar('0');
 				len++;
 			}
-			len = len + print_hex_plus(cast);
+			len = len + printf_hex_plus(cast);
 		}
 		else
 		{
@@ -39,4 +39,13 @@ int print_String(va_list args)
 		}
 	}
 	return (len);
+	}
+
+	_putchar('(');
+	_putchar('n');
+	_putchar('u');
+	_putchar('l');
+	_putchar('l');
+	_putchar(')');
+	return (6);
 }
